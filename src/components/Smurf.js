@@ -4,7 +4,7 @@ class Smurf extends React.Component {
   constructor(props) { super();}
   render() {
     const {smurf } = this.props;
-    console.log(this.props)
+    // console.log(this.props)
     return <div data-testid="smurf" className="card">
         <>
         <h1>{this.props.name}</h1>

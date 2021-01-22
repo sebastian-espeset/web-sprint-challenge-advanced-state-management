@@ -1,17 +1,36 @@
 import React from 'react';
 
 class AddForm extends React.Component {
+    constructor(props){
+        super();
+        this.state=({
+            name:'',
+            position:'',
+            description:'',
+            nickname:''
+        })
+    }
+    handleChange=(e)=>{
+        this.setState({[e.target.name]:e.target.value})
+    }
 
     render() {
+        console.log(this.state)
         return(<section>
             <h2>Add Smurf</h2>
             <form>
                 <div className="form-group">
                     <label htmlFor="name">Name:</label><br/>
                     <input onChange={this.handleChange} name="name" id="name" />
+                    <label htmlFor="position">Position:</label><br/>
+                    <input onChange={this.handleChange} name="position" id="position" />
+                    <label htmlFor="description">Description:</label><br/>
+                    <input onChange={this.handleChange} name="description" id="description" />
+                    <label htmlFor="nickname">Nickname:</label><br/>
+                    <input onChange={this.handleChange} name="nickname" id="nickname" />
                 </div>
 
-                <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: </div>
+                <div data-testid="errorAlert" className="alert alert-danger" role="alert"></div>
                 <button>Submit Smurf</button>
             </form>
         </section>);

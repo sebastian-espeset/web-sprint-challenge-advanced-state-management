@@ -8,7 +8,6 @@ export const initialState = {
 export const reducer = (state=initialState,action)=>{
     switch(action.type){
         case("FETCH_SMURF_START"):
-        console.log("from the reducer")
             return {...state,
                     isLoading:'fetching your smurfs...'
             };

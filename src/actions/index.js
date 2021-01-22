@@ -13,9 +13,24 @@ export const fetchSmurf=()=>{
                 console.log(err,"is the error")
             });
     });
+}
+
+export const addSmurf=(newSmurf)=>{
+    return(dispatch=>{
+        
+        axios.post("http://localhost:3333/smurfs")
+        .then((res)=>{
+            console.log(res)
+            dispatch({type:"ADD_SMURF_SUCCESS",payload:newSmurf})
+        })
+        .catch((err)=>{
+            console.log(err)
+            dispatch({type:"ADD_SMURF_FAIL",payload:err})
+        })
+    })
+}
 
    
-}
 //Task List:
 //1. Add fetch smurfs action: 
 //              - fetch and return initial list of smurfs

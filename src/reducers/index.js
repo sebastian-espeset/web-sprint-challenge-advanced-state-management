@@ -26,6 +26,11 @@ export const reducer = (state=initialState,action)=>{
                 return {...state,
                     smurfs:[...state.smurfs,action.payload]
                 }
+        case"ADD_SMURF_FAIL":
+                console.log(`${action.payload}`)
+                return{...state,
+                    error:`${action.payload}`
+                }
         default:
             return state
     };

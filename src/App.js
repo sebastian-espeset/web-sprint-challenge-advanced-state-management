@@ -22,7 +22,7 @@ class App extends Component {
             <a className="navbar-brand">Smurf Village Database</a>
           </nav>
           <main>
-            <AddForm dispatch={store.dispatch}/>
+            <AddForm dispatch={store.dispatch} error={store.error}/>
             <SmurfDisplay dispatch={store.dispatch}/>
           </main>
         </div>

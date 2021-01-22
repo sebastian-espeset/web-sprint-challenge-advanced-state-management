@@ -25,20 +25,20 @@ class AddForm extends React.Component {
       description: this.state.description,
     };
     this.props.dispatch(addSmurf(newSmurf));
-    this.setState({
+    this.props.dispatch(fetchSmurf());
+    this.state=({
       name: "",
       position: "",
       nickname: "",
       description: "",
     });
-    this.props.dispatch(fetchSmurf());
   };
 
   render() {
     return (
       <section>
         <h2>Add Smurf</h2>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name:</label>
             <br />
@@ -57,13 +57,14 @@ class AddForm extends React.Component {
               id="description"
             />
           </div>
-
           <div
             data-testid="errorAlert"
             className="alert alert-danger"
             role="alert"
-          ></div>
-          <button onClick={this.handleSubmit}>Submit Smurf</button>
+          >
+            <h2>{this.props.error}</h2>
+          </div>
+          <button>Submit Smurf</button>
         </form>
       </section>
     );

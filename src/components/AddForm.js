@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addSmurf } from "../actions/index";
+import { addSmurf, fetchSmurf } from "../actions/index";
 
 class AddForm extends React.Component {
   constructor(props) {
@@ -31,6 +31,7 @@ class AddForm extends React.Component {
       nickname: "",
       description: "",
     });
+    this.props.dispatch(fetchSmurf());
   };
 
   render() {
@@ -72,7 +73,7 @@ const mapStateToProps = (state) => {
   return state;
 };
 
-export default connect(mapStateToProps, { addSmurf })(AddForm);
+export default connect(mapStateToProps, { addSmurf, fetchSmurf })(AddForm);
 
 //Task List:
 //1. Add in all necessary import components and library methods.

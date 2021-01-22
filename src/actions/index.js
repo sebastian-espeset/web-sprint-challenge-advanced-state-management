@@ -18,7 +18,7 @@ export const fetchSmurf=()=>{
 export const addSmurf=(newSmurf)=>{
     return(dispatch=>{
         
-        axios.post("http://localhost:3333/smurfs")
+        axios.post("http://localhost:3333/smurfs",newSmurf)
         .then((res)=>{
             console.log(res)
             dispatch({type:"ADD_SMURF_SUCCESS",payload:newSmurf})

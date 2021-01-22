@@ -22,6 +22,10 @@ export const reducer = (state=initialState,action)=>{
                     isLoading:'',
                     error:'error fetching smurfs'
                 };
+        case"ADD_SMURF_SUCCESS":
+                return {...state,
+                    smurfs:[...state.smurfs,action.payload]
+                }
         default:
             return state
     };

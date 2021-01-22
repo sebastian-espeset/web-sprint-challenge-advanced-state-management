@@ -9,11 +9,8 @@ export class SmurfDisplay extends React.Component {
 }
 componentDidMount() {
     this.props.dispatch(fetchSmurf());
-    // console.log(this.props)
   }
-// componentDidUpdate(){
-//     console.log("updating smurf display",this.props.smurfs)
-// }
+
   render() {
     return (
       <div>
